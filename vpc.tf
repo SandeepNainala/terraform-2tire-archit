@@ -74,7 +74,7 @@ resource "aws_subnet" "private-subnet1" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.3.0/24"
   availability_zone_id            = "us-east-1"
-  map_customer_owned_ip_on_launch = false
+  map_public_ip_on_launch         = false
 
   tags = {
     Name = "private-subnet1"
@@ -86,7 +86,7 @@ resource "aws_subnet" "private-subnet2" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.4.0/24"
   availability_zone_id            = "us-east-1"
-  map_customer_owned_ip_on_launch = false
+  map_public_ip_on_launch         = false
 
   tags = {
     Name = "private-subnet2"
@@ -153,7 +153,7 @@ resource "aws_lb_target_group" "lb-tg" {
   protocol = "HTTP"
   vpc_id   = aws_vpc.custom_vpc.id
 
-  depends_on = [aws_vpc.custom_vpc.id]
+  depends_on = [aws_instance.my-web-instance2]
 }
 
 # creating load balancer target group
