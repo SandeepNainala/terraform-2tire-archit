@@ -13,7 +13,7 @@ resource "aws_db_instance" "my_database" {
   skip_final_snapshot    = true
 }
 # creating private security group for Database tire
-resource "aws_security_group_instance" "my_database_tier-lu" {
+resource "aws_security_group" "my_database_tier-lu" {
   name        = "my_database_tier_lu"
   description = "allow traffic from SSH & HTTP"
   vpc_id      = aws_vpc.custom_vpc.id
