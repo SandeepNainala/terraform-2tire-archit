@@ -37,7 +37,7 @@ resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.custom_vpc.id
 
   route {
-    cidr_block     = "10.0.1.0/24"
+    cidr_block     = "10.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.custom-nat-gw.id
   }
   tags = {
@@ -60,7 +60,7 @@ resource "aws_subnet" "public-subnet1" {
 
 resource "aws_subnet" "public-subnet2" {
   vpc_id                          = aws_vpc.custom_vpc.id
-  cidr_block                      = "10.0.1.0/24"
+  cidr_block                      = "10.0.2.0/24"
   availability_zone_id            = "use1-az2"
   map_public_ip_on_launch         = true
 
