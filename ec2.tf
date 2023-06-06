@@ -1,6 +1,6 @@
 # creating ec2 instance
 resource "aws_instance" "my-web-instance1" {
-  ami                         = "ami-0b5a2b5b8f2be4ec2"
+  ami                         = "ami-03265a0778a880afb"
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public-subnet1.id
   associate_public_ip_address = true
@@ -20,7 +20,7 @@ resource "aws_instance" "my-web-instance1" {
 
 # creating ec2 instance
 resource "aws_instance" "my-web-instance2" {
-  ami                         = "ami-0b5a2b5b8f2be4ec2"
+  ami                         = "ami-03265a0778a880afb"
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public-subnet2.id
   associate_public_ip_address = true
