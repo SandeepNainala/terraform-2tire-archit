@@ -37,7 +37,7 @@ resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.custom_vpc.id
 
   route {
-    cidr_block     = "10.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.custom-nat-gw.id
   }
   tags = {
@@ -227,8 +227,8 @@ resource "aws_security_group" "custom-public-SG-DB" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 0
+    to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
