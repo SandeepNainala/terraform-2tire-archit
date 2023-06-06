@@ -49,7 +49,7 @@ resource "aws_route_table" "private_route_table" {
 resource "aws_subnet" "public-subnet1" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.1.0/24"
-  availability_zone_id            = "us-east-1a"
+  availability_zone_id            = "use1-az1"
   map_public_ip_on_launch         = true
 
   tags = {
@@ -61,7 +61,7 @@ resource "aws_subnet" "public-subnet1" {
 resource "aws_subnet" "public-subnet2" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.1.0/24"
-  availability_zone_id            = "us-east-1b"
+  availability_zone_id            = "use1-az2"
   map_public_ip_on_launch         = true
 
   tags = {
@@ -73,7 +73,7 @@ resource "aws_subnet" "public-subnet2" {
 resource "aws_subnet" "private-subnet1" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.3.0/24"
-  availability_zone_id            = "us-east-1a"
+  availability_zone_id            = "use1-az1"
   map_public_ip_on_launch         = false
 
   tags = {
@@ -85,7 +85,7 @@ resource "aws_subnet" "private-subnet1" {
 resource "aws_subnet" "private-subnet2" {
   vpc_id                          = aws_vpc.custom_vpc.id
   cidr_block                      = "10.0.4.0/24"
-  availability_zone_id            = "us-east-1b"
+  availability_zone_id            = "use1-az2"
   map_public_ip_on_launch         = false
 
   tags = {
